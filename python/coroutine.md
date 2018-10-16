@@ -29,7 +29,6 @@ f.next()  # 4
 f.next()  # yield 모두 소진시, StopIteration 예외 발생
 
 ```
-(python 카테고리에 있는 generator.py 파일도 generator를 다룬 부분 있으니 참조)
 
 즉, 함수 호출 후에 사라지는게 아니라, 함수 호출 후 다른 짓(?)을 하다가 함수의 다음 값이 필요할때 next()를 사용해서 원하는 값을 불러올 수 있다.
 
