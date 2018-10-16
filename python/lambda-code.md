@@ -30,5 +30,7 @@ print(map(func, origin))
 
 # lambda를 변수에 할당도 가능
 f = lambda x : x*x
-print(map(f, origin))
+f(4)  # 16
+f(5)  # 25
+print(map(f, origin))  # [1, 4, 9, 16, 25]
 ```
