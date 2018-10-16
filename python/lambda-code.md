@@ -19,18 +19,18 @@ def func(x):
     return square_x
 
 squared = map(func, origin)  # OR squared = [func(item) for item in origin]
-print("square all items using function : {}".format(squared))
+print("square all items using function : {}".format(squared))  # [1, 4, 9, 16, 25]
 
 # 2. 람다 사용 예제
-squared = map(lambda x : x*x, origin)
-print("square all items using lambda : {}".format(squared)) 
+squared = list(map(lambda x : x*x, origin))
+print("square all items using lambda : {}".format(squared))  # [1, 4, 9, 16, 25]
 
 # map(함수명, 리스트) >> 리스트의 각 인자에 함수를 적용시킨 결과를 리스트로 반환
-print(map(func, origin))
+print(list(map(func, origin)))  # [1, 4, 9, 16, 25]
 
 # lambda를 변수에 할당도 가능
 f = lambda x : x*x
 f(4)  # 16
 f(5)  # 25
-print(map(f, origin))  # [1, 4, 9, 16, 25]
+print(list(map(f, origin)))  # [1, 4, 9, 16, 25]
 ```
