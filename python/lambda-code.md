@@ -18,7 +18,7 @@ def func(x):
     square_x = x*x
     return square_x
 
-squared = map(func, origin)  # OR squared = [func(item) for item in origin]
+squared = list(map(func, origin))  # OR squared = [func(item) for item in origin]
 print("square all items using function : {}".format(squared))  # [1, 4, 9, 16, 25]
 
 # 2. 람다 사용 예제
