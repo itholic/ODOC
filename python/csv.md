@@ -30,7 +30,7 @@ with open(path,'a') as f:
     w.writerow([13, 14, 15])
 
 # 쓴 내용 확인
-with open('./data/test.csv','r') as f:
+with open(path,'r') as f:
     data = csv.reader(f)  # csv.reader를 통해 데이터를 list in list
     print([line for line in data])  # [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9'], ['10', '11', '12'], ['13', '14', '15']]
 
