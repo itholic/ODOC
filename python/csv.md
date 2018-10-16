@@ -16,13 +16,15 @@ csv(comma separated values)는 말그대로 각 라인의 컬럼이 콤마로 �
 
 import csv
 
+path = './data/test.csv'
+
 # csv 파일 읽기
-with open('./data/test.csv','r') as f:
+with open(path,'r') as f:
     data = csv.reader(f)  # csv.reader를 통해 데이터를 list in list
     print([line for line in data])  # [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
 
 # csv 파일 쓰기
-with open('./data/test.csv','a') as f:
+with open(path,'a') as f:
     w = csv.writer(f)
     w.writerow([10, 11, 12])
     w.writerow([13, 14, 15])
