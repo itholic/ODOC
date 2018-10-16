@@ -25,7 +25,7 @@ print("square all items using function : {}".format(squared))  # [1, 4, 9, 16, 2
 squared = list(map(lambda x : x*x, origin))
 print("square all items using lambda : {}".format(squared))  # [1, 4, 9, 16, 25]
 
-# map(함수명, 리스트) >> 리스트의 각 인자에 함수를 적용시킨 결과를 리스트로 반환
+# map(함수명, 리스트) >> 리스트의 각 인자에 함수를 적용시킨 결과를 반환
 print(list(map(func, origin)))  # [1, 4, 9, 16, 25]
 
 # lambda를 변수에 할당도 가능
