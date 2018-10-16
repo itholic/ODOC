@@ -1,0 +1,3 @@
+[DEBUG] 'logging_file.py' 2018-10-08 08:08:56,567 : for debug
+[INFO] 'logging_file.py' 2018-10-08 08:08:56,568 : for info
+[WARNING] 'logging_file.py' 2018-10-08 08:08:56,568 : for warn
