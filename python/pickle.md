@@ -4,6 +4,10 @@
 
 하지만 가끔 list나 dict자료형 자체를 파일에 쓰고싶을때가 있다.
 
+즉, 특정한 객체나 데이터 구조 자체를 그대로 저장했다가 다시 쓰고싶을때가 있다.
+
+심지어 함수, 클래스도 저장하고 싶다면?
+
 이런 상황을 위해 파이썬에서는 pickle 모듈을 지원한다.
 
 
@@ -34,3 +38,24 @@ with open('./data/fruit.txt','rb') as f:
 ```
 <80>^C}q^@(X^E^@^@^@appleq^AMè^CX^F^@^@^@bananaq^BMÐ^GX^F^@^@^@tomatoq^CX^G^@^@^@soldoutq^DX^E^@^@^@melonq^EX^D^@^@^@5000q^Fu.
 ```
+
+다음과 같이 함수도 저장했다가 꺼내서 사용 가능하다.
+```python
+# -*- coding:utf-8 -*-
+
+import pickle
+
+def test():
+    return 'hello'
+
+# pickle로 함수를 직렬화해서 저장
+with open('./data/func.txt','wb') as f:
+    pickle.dump(test,f)
+
+# pickle로 쓰인 함수 읽어서 호출
+with open('./data/fruit.txt','rb') as f:
+    data = pickle.load(f)
+    print(data())  # hello
+```
+
+class에도 똑같이 적용 가능하다.
