@@ -40,22 +40,52 @@ with open('./data/fruit.txt','rb') as f:
 ```
 
 다음과 같이 함수도 저장했다가 꺼내서 사용 가능하다.
+
+dump후 load하면, 함수 호출시 전달했던 인자를 포함해 dump했던 상태 그대로 가지고 있는것을 알 수 있다.
+
 ```python
 # -*- coding:utf-8 -*-
 
 import pickle
 
-def test():
-    return 'hello'
+def test(name):
+    name = name
+    yield 'hello, {}'.format(name)
 
 # pickle로 함수를 직렬화해서 저장
 with open('./data/func.txt','wb') as f:
-    pickle.dump(test,f)
+    name = 'itholic'
+    pickle.dump(test(name),f)
 
 # pickle로 쓰인 함수 읽어서 호출
-with open('./data/fruit.txt','rb') as f:
+with open('./data/func.txt','rb') as f:
     data = pickle.load(f)
-    print(data())  # hello
+    print(data.next())  # hello
 ```
 
-class에도 똑같이 적용 가능하다.
+이는 클래스에도 똑같이 적용 가능하다.
+
+다음과 같이 클래스 인스턴스를 저장하고, 클래스에 저장된 변수를 다시 사용할 수 있다.
+
+```python
+# -*- coding:utf-8 -*-
+
+import pickle
+
+class test:
+    def __init__(self, name):
+        name = name
+
+    def print_name(self):
+        print('hello, {}'.format(name))
+
+# pickle로 클래스를 직렬화해서 저장
+with open('./data/class.txt','wb') as f:
+    name = 'itholic'
+    pickle.dump(test(name),f)
+
+# pickle로 쓰인 클래스를 읽어서 print_name 메소드 호출
+with open('./data/class.txt','rb') as f:
+    data = pickle.load(f)
+    data.print_name()  # hello, itholic
+```
