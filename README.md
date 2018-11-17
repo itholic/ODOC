@@ -1,3 +1,5 @@
+# 내용 중복으로 인해 2018-11-15 이후 정리 자료는 <a href="https://github.com/itholic/itholic.github.io" target="_blank">블로그</a>에만 커밋
+
 # ODOC
 One Day One Commit
 
