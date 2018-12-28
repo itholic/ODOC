@@ -1,0 +1,5 @@
+# TIL
+
+- Apache livy build
+    - 빌드시 -DskipTests 옵션 넣기
+    - setuptools 최신버전으로 업데이트후 진행
